@@ -17,7 +17,7 @@ from datetime import timedelta
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+ 
 AUTH_USER_MODEL = 'api.User'
 
 
@@ -28,6 +28,14 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
  
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',  # Filtro de busca
+        'rest_framework.filters.OrderingFilter',  # Filtro de ordenação
+    ],
 }
 
 SIMPLE_JWT = {
@@ -76,6 +84,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
 
     'rest_framework',
+    'django_filters',
     'api',
     'drf_yasg',
 
@@ -118,9 +127,9 @@ WSGI_APPLICATION = 'autenticacao.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'server',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': 'autenticacao',
+        'USER': 'placidoneto',
+        'PASSWORD': 'placidoneto',
         'HOST': 'localhost',
         'PORT': '5432',
     }

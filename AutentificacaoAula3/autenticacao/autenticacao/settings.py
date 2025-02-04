@@ -17,7 +17,7 @@ from datetime import timedelta
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+ 
 AUTH_USER_MODEL = 'api.User'
 
 
@@ -118,9 +118,9 @@ WSGI_APPLICATION = 'autenticacao.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'server',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': 'autenticacao',
+        'USER': 'placidoneto',
+        'PASSWORD': 'placidoneto',
         'HOST': 'localhost',
         'PORT': '5432',
     }
